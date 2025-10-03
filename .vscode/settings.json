@@ -1,0 +1,27 @@
+{
+  // Enable format on save
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+
+  // Make Prettier the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // File-type specific formatters
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Run ESLint auto-fixes on save (true = automatic, not just explicit)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}
