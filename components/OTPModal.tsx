@@ -89,15 +89,18 @@ const OTPModal = ({
               onClick={handleSubmit}
               className="shad-submit-btn h-12"
               type="button"
+              disabled={isLoading}
             >
-              Submit
-              <img
-                src="assets/icons/loader.svg"
-                alt="loader"
-                width={24}
-                height={24}
-                className="ml-2 animate-spin"
-              />
+              {isLoading ? 'Submitting' : 'Submit'}
+              {isLoading && (
+                <Image
+                  src="assets/icons/loader.svg"
+                  alt="loader"
+                  width={24}
+                  height={24}
+                  className="ml-2 animate-spin"
+                />
+              )}
             </AlertDialogAction>
 
             <div className="subtitle-2 mt-2 text-center text-light-100">
