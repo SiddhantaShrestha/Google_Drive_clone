@@ -5,12 +5,17 @@ import Search from './Search';
 import FileUploader from './FileUploader';
 import { signOutUser } from '@/lib/actions/user.actions';
 
-const Header = () => {
+interface HeaderProps {
+  userId: string;
+  accountId: string;
+}
+
+const Header = ({ userId, accountId }: HeaderProps) => {
   return (
     <header className="header">
       <Search />
       <div className="header-wrapper">
-        <FileUploader />
+        <FileUploader ownerId={userId} accountId={accountId} />
         {/* new React19 feature, use server directive to implement client side function in server component */}
         <form
           action={async () => {
