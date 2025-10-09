@@ -6,6 +6,9 @@ import { redirect } from 'next/navigation';
 import React from 'react';
 import { Toaster } from '@/components/ui/sonner';
 
+//for deployment (the page could'nt be rendered statically as it uses cookies, the page relies on data from cookies which requires dynamic behavior)
+export const dynamic = 'force-dynamic';
+
 const layout = async ({ children }: { children: React.ReactNode }) => {
   const currentUser = await getCurrentUser();
   if (!currentUser) return redirect('/sign-in');
